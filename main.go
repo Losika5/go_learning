@@ -1,9 +1,9 @@
 package main
 import (
-	"errors"
+	//"errors"
 	"fmt"
 )
-const passingMark = 50
+/* const passingMark = 50
 
 type address struct{
 	City string
@@ -159,5 +159,117 @@ func main(){
 },
 
 	}
+
+fmt.Println("All Students")
+displayStudents(students)
+
+fmt.Println("Students who passed")
+
+displayStudentsPassed(students)
+
+
+fmt.Println("--- Search and Calculate Individual Average ---")
+targetID := "STU_001"
+
+findStudents,err := findStudent(students, targetID)
+
+if err != nil{
+	fmt.Println("the student wasnt found ",err)
+
+}else{
+	fmt.Printf("Found Student:", findStudents.Name)
+
+	avg,err := calculateAverage(findStudents.Scores)
+
+	if err != nil {
+       fmt.Println("Error calculating average:", err)
+	}else{
+		fmt.Printf("Average Score:", avg)
+		fmt.Printf("Passed ", hasPassed(avg))
+	}
+
+}
+
+
+fmt.Println("\n--- Adding a New Student ---")
+	newStudent := Student{
+		ID:   "STU_004",
+		Name: "Kofi",
+		Age:  23,
+		Address: address{
+			City:    "Kumasi",
+			Country: "Ghana",
+		},
+		Scores: map[string]float64{
+			"Mathematics": 60,
+			"English":     70,
+		},
+	}
+
+studentz,err := addStudent(students,newStudent)
+
+
+if err != nil{
+	fmt.Println("Failed to add a student",err)
+}else{
+	fmt.Println("Successfully added a sudent and the Total is:", len(studentz))
+}
+
+
+
+
+
+
+}  */
+
+// pointers
+
+
+
+func addTen(num int){
+	num = num + 10
+}
+func addTenPtr(num *int){
+	*num = *num + 10
+}
+
+
+
+// interface
+
+
+type Notiers interface{
+	Notify(message string)
+}
+
+type Email struct{
+	EmailAdress string 
+}
+
+type SMS struct{
+	PhoneNumber string 
+}
+
+
+func (e Email)Notify(message string){
+
+		fmt.Printf("Sending Email to:", e.EmailAdress, message)
+	}
+
+func (s SMS)Notify(message string){
+		fmt.Printf("Sending SMS to:", s.PhoneNumber, message)
+		
+	}
+
+
+func main(){
+	val := 5 
+	addTen(val)
+	fmt.Println(val)
+
+	addTenPtr(&val)
+	fmt.Println(val)
+
+
 
 }
