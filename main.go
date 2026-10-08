@@ -1,9 +1,10 @@
 package main
 import (
-	//"errors"
+	"errors"
 	"fmt"
+	//"math"
 )
-/* const passingMark = 50
+ const passingMark = 50
 
 type address struct{
 	City string
@@ -177,15 +178,15 @@ if err != nil{
 	fmt.Println("the student wasnt found ",err)
 
 }else{
-	fmt.Printf("Found Student:", findStudents.Name)
+	fmt.Println("Found Student:", findStudents.Name)
 
 	avg,err := calculateAverage(findStudents.Scores)
 
 	if err != nil {
        fmt.Println("Error calculating average:", err)
 	}else{
-		fmt.Printf("Average Score:", avg)
-		fmt.Printf("Passed ", hasPassed(avg))
+		fmt.Println("Average Score:", avg)
+		fmt.Println("Passed ", hasPassed(avg))
 	}
 
 }
@@ -193,7 +194,7 @@ if err != nil{
 
 fmt.Println("\n--- Adding a New Student ---")
 	newStudent := Student{
-		ID:   "STU_004",
+		ID:   "STU_001",
 		Name: "Kofi",
 		Age:  23,
 		Address: address{
@@ -220,7 +221,7 @@ if err != nil{
 
 
 
-}  */
+}  /*
 
 // pointers
 
@@ -261,6 +262,28 @@ func (s SMS)Notify(message string){
 		
 	}
 
+type shape interface{
+	area() float64
+}
+
+type circle struct{
+	radius float64
+}
+
+type rect struct{
+	width float64
+	height float64
+}
+
+
+func (r rect) area() float64{
+	return r.width * r.height
+}
+
+func (c circle) area() float64{
+	return math.Pi *c.radius * c.radius
+}
+	
 
 func main(){
 	val := 5 
@@ -270,6 +293,17 @@ func main(){
 	addTenPtr(&val)
 	fmt.Println(val)
 
+	c1 :=circle{4.5}
+	r1 :=rect{5,7}
+
+	shapes := []shape{c1,r1}
+
+	for _, value := range shapes {
+		fmt.Println(value.area())
+	}
+    
+
+	
 
 
-}
+}  */
